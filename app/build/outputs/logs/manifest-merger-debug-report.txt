@@ -19,6 +19,7 @@ MERGED from [com.android.support:support-core-utils:26.1.0] /Users/apple/.gradle
 MERGED from [com.android.support:support-core-ui:26.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/d928c65fe47b748a0564c7eb2aa32c82/AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/0f6a11c5a599d9aa5522f2989ef1c92a/AndroidManifest.xml:17:1-31:12
 MERGED from [org.tensorflow:tensorflow-lite:1.14.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/48fe6cbb6004b3014ac40478b8990f9c/AndroidManifest.xml:2:1-10:12
+MERGED from [:RobotActivityLibrary] /Users/apple/Desktop/tflite/RobotActivityLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:2:1-17:12
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/9d6800c5c467e9406e7965ff920446af/AndroidManifest.xml:17:1-30:12
 INJECTED from /Users/apple/Desktop/tflite/app/src/main/AndroidManifest.xml:18:1-40:12
 INJECTED from /Users/apple/Desktop/tflite/app/src/main/AndroidManifest.xml:18:1-40:12
@@ -81,8 +82,12 @@ MERGED from [com.android.support:support-compat:26.1.0] /Users/apple/.gradle/cac
 MERGED from [com.android.support:support-compat:26.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/0f6a11c5a599d9aa5522f2989ef1c92a/AndroidManifest.xml:25:5-29:19
 MERGED from [org.tensorflow:tensorflow-lite:1.14.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/48fe6cbb6004b3014ac40478b8990f9c/AndroidManifest.xml:8:5-20
 MERGED from [org.tensorflow:tensorflow-lite:1.14.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/48fe6cbb6004b3014ac40478b8990f9c/AndroidManifest.xml:8:5-20
+MERGED from [:RobotActivityLibrary] /Users/apple/Desktop/tflite/RobotActivityLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-15:19
+MERGED from [:RobotActivityLibrary] /Users/apple/Desktop/tflite/RobotActivityLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:11:5-15:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/9d6800c5c467e9406e7965ff920446af/AndroidManifest.xml:24:5-28:19
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/9d6800c5c467e9406e7965ff920446af/AndroidManifest.xml:24:5-28:19
+	android:supportsRtl
+		ADDED from [:RobotActivityLibrary] /Users/apple/Desktop/tflite/RobotActivityLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:14:9-35
 	android:label
 		ADDED from /Users/apple/Desktop/tflite/app/src/main/AndroidManifest.xml:27:9-41
 	android:icon
@@ -141,6 +146,8 @@ MERGED from [com.android.support:support-compat:26.1.0] /Users/apple/.gradle/cac
 MERGED from [com.android.support:support-compat:26.1.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/0f6a11c5a599d9aa5522f2989ef1c92a/AndroidManifest.xml:21:5-23:58
 MERGED from [org.tensorflow:tensorflow-lite:1.14.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/48fe6cbb6004b3014ac40478b8990f9c/AndroidManifest.xml:5:5-6:41
 MERGED from [org.tensorflow:tensorflow-lite:1.14.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/48fe6cbb6004b3014ac40478b8990f9c/AndroidManifest.xml:5:5-6:41
+MERGED from [:RobotActivityLibrary] /Users/apple/Desktop/tflite/RobotActivityLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
+MERGED from [:RobotActivityLibrary] /Users/apple/Desktop/tflite/RobotActivityLibrary/build/intermediates/library_manifest/debug/AndroidManifest.xml:7:5-9:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/9d6800c5c467e9406e7965ff920446af/AndroidManifest.xml:20:5-22:41
 MERGED from [android.arch.lifecycle:runtime:1.0.0] /Users/apple/.gradle/caches/transforms-2/files-2.1/9d6800c5c467e9406e7965ff920446af/AndroidManifest.xml:20:5-22:41
 INJECTED from /Users/apple/Desktop/tflite/app/src/main/AndroidManifest.xml

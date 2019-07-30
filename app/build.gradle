@@ -56,4 +56,6 @@ dependencies {
     implementation 'org.tensorflow:tensorflow-lite:+'
 
     testImplementation 'junit:junit:4.12'
+    implementation project(path: ':ZenboJuniorSDK')
+    implementation project(path: ':RobotActivityLibrary')
 }

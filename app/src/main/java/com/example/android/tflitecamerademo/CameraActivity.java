@@ -6,28 +6,19 @@ import android.util.Log;
 
 import com.asus.robotframework.API.RobotAPI;
 import com.asus.robotframework.API.RobotCallback;
-import com.asus.robotframework.API.RobotCmdState;
-import com.asus.robotframework.API.RobotCommand;
 import com.asus.robotframework.API.RobotErrorCode;
 import com.asus.robotframework.API.RobotFace;
-import com.asus.robotframework.API.SpeakConfig;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.robot.asus.robotactivity.RobotActivity;
 
 import org.json.JSONObject;
 
-import java.util.Arrays;
-
 /** Main {@code Activity} class for the Camera app. */
 public class CameraActivity extends RobotActivity implements ActivityCompat.OnRequestPermissionsResultCallback {
-
+  public final static String TAG = CameraActivity.class.getSimpleName();
   public static RobotAPI mRobotAPI;
   public static Dialogs dialogs;
 
-  public CameraActivity(RobotCallback robotCallback, RobotCallback.Listen robotListenCallback) {
-    super(robotCallback, robotListenCallback);
-  }
+
 
 
   @Override
@@ -40,15 +31,20 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
               .replace(R.id.container, Camera2BasicFragment.newInstance())
               .commit();
     }
+
+    mRobotAPI = new RobotAPI(this, robotCallback);
+    dialogs = new Dialogs();
   }
 
+  public static void sayWithExpression(String speech){
+    Log.d(TAG, "say /w ex " + speech);
 
-
-  @Override
-  protected void onPause() {
-    mRobotAPI.robot.unregisterListenCallback();
-    super.onPause();
+    //In debugging mode we ignore this for efficiency
+    //mRobotAPI.robot.setExpression(generate_expression(speech));
+    mRobotAPI.robot.setExpression(RobotFace.DEFAULT);
+    mRobotAPI.robot.speak(speech);
   }
+
 
   @Override
   protected void onDestroy() {
@@ -61,6 +57,39 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
       super.onResult(cmd, serial, err_code, result);
     }
     };
+
+  public static RobotCallback.Listen robotListenCallback = new RobotCallback.Listen() {
+
+    @Override
+    public void onFinishRegister() {
+
+    }
+
+    @Override
+    public void onVoiceDetect(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onSpeakComplete(String s, String s1) {
+
+    }
+
+    @Override
+    public void onEventUserUtterance(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onResult(JSONObject jsonObject) {
+
+    }
+
+    @Override
+    public void onRetry(JSONObject jsonObject) {
+
+    }
+  };
 
 
   }

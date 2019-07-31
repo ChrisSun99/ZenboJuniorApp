@@ -44,7 +44,7 @@ repositories {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
@@ -54,8 +54,7 @@ dependencies {
     implementation 'com.android.support:support-annotations:25.3.1'
     implementation 'com.android.support:support-v13:26.1.0'
     implementation 'org.tensorflow:tensorflow-lite:+'
-
     testImplementation 'junit:junit:4.12'
-    implementation project(path: ':ZenboJuniorSDK')
+    implementation files('libs/ZenboJuniorSDK.jar')
     implementation project(path: ':RobotActivityLibrary')
 }

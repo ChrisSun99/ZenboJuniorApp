@@ -4,44 +4,111 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Dialogs {
-    public Map<String, String> command_error = new HashMap<>();
-    public Map<String, String> youtube1 = new HashMap<>();
-    public Map<String, String> photo1 = new HashMap<>();
-    public Map<String, String> photo2 = new HashMap<>();
-    public Map<String, String> photo3 = new HashMap<>();
-    public Map<String, String> photo4 = new HashMap<>();
-    public Map<String, String> share1 = new HashMap<>();
-    public Map<String, String> share2 = new HashMap<>();
-    public Map<String, String> share3 = new HashMap<>();
+    // Kids
+    public Map<String, String> female_kid_anger = new HashMap<>();
+    public Map<String, String> female_kid_disgust = new HashMap<>();
+    public Map<String, String> female_kid_fear = new HashMap<>();
+    public Map<String, String> female_kid_happiness = new HashMap<>();
+    public Map<String, String> female_kid_neutral = new HashMap<>();
+    public Map<String, String> female_kid_sadness = new HashMap<>();
+    public Map<String, String> female_kid_surprise = new HashMap<>();
+
+    public Map<String, String> male_kid_anger = new HashMap<>();
+    public Map<String, String> male_kid_disgust = new HashMap<>();
+    public Map<String, String> male_kid_fear = new HashMap<>();
+    public Map<String, String> male_kid_happiness = new HashMap<>();
+    public Map<String, String> male_kid_neutral = new HashMap<>();
+    public Map<String, String> male_kid_sadness = new HashMap<>();
+    public Map<String, String> male_kid_surprise = new HashMap<>();
+
+    // Adults
+    public Map<String, String> female_adult_anger = new HashMap<>();
+    public Map<String, String> female_adult_disgust = new HashMap<>();
+    public Map<String, String> female_adult_fear = new HashMap<>();
+    public Map<String, String> female_adult_happiness = new HashMap<>();
+    public Map<String, String> female_adult_neutral = new HashMap<>();
+    public Map<String, String> female_adult_sadness = new HashMap<>();
+    public Map<String, String> female_adult_surprise = new HashMap<>();
+
+    public Map<String, String> male_adult_anger = new HashMap<>();
+    public Map<String, String> male_adult_disgust = new HashMap<>();
+    public Map<String, String> male_adult_fear = new HashMap<>();
+    public Map<String, String> male_adult_happiness = new HashMap<>();
+    public Map<String, String> male_adult_neutral = new HashMap<>();
+    public Map<String, String> male_adult_sadness = new HashMap<>();
+    public Map<String, String> male_adult_surprise = new HashMap<>();
+
+
+    // Senior Adults
+    public Map<String, String> female_senior_anger = new HashMap<>();
+    public Map<String, String> female_senior_disgust = new HashMap<>();
+    public Map<String, String> female_senior_fear = new HashMap<>();
+    public Map<String, String> female_senior_happiness = new HashMap<>();
+    public Map<String, String> female_senior_neutral = new HashMap<>();
+    public Map<String, String> female_senior_sadness = new HashMap<>();
+    public Map<String, String> female_senior_surprise = new HashMap<>();
+
+
+    public Map<String, String> male_senior_anger = new HashMap<>();
+    public Map<String, String> male_senior_disgust = new HashMap<>();
+    public Map<String, String> male_senior_fear = new HashMap<>();
+    public Map<String, String> male_senior_happiness = new HashMap<>();
+    public Map<String, String> male_senior_neutral = new HashMap<>();
+    public Map<String, String> male_senior_sadness = new HashMap<>();
+    public Map<String, String> male_senior_surprise = new HashMap<>();
+
 
     public Dialogs(){
-        command_error.put("en","There is an error in the command, please verify.");
-        command_error.put("zh","There is an error in the command, please verify.");
+        // Kids
+        female_kid_anger.put("zh","孩子，你為什麼看起來很生氣的樣子?");
+        female_kid_disgust.put("zh","孩子，你怎麼了?");
+        female_kid_fear.put("zh","孩子，你怎麼了?");
+        female_kid_happiness.put("zh","孩子, 你看起來很開心喔！");
+        female_kid_neutral.put("zh","孩子, 今天心情怎麼樣？");
+        female_kid_sadness.put("zh","孩子, 您怎麼了？");
+        female_kid_surprise.put("zh", "孩子，你看起來很驚訝!");
 
-        youtube1.put("en","The video will start shortly. Please wait.");
-        youtube1.put("zh","準備播放...");
+        male_kid_anger.put("zh","孩子，你為什麼看起來很生氣的樣子?");
+        male_kid_disgust.put("zh","孩子，你怎麼了？");
+        male_kid_fear.put("zh", "孩子, 您怎麼了？");
+        male_kid_happiness.put("zh", "孩子, 你怎麼了？");
+        male_kid_neutral.put("zh", "孩子, 你怎麼了？");
+        male_kid_sadness.put("zh", "孩子, 你怎麼了？");
+        male_kid_surprise.put("zh", "孩子, 你怎麼了？");
 
-        photo1.put("en","Here\'s your photo!");
-        photo1.put("zh","這是您的照片!");
+        // Adults
+        female_adult_anger.put("zh","女士，你為什麼看起來很生氣的樣子?");
+        female_adult_disgust.put("zh","女士，你怎麼了?");
+        female_adult_fear.put("zh","女士，你為什麼看起來很緊張？");
+        female_adult_happiness.put("zh","女士，你看起來氣色很棒喔!");
+        female_adult_neutral.put("zh","女士，今天心情怎麼樣?");
+        female_adult_sadness.put("zh","女士，你怎麼看起來不開心?");
+        female_adult_surprise.put("zh", "女士，你看起來很驚訝!");
 
-        photo2.put("en","Press redo to retake it.");
-        photo2.put("zh","請按重新開始");
+        male_adult_anger.put("zh","先生，你為什麼看起來很生氣的樣子?");
+        male_adult_disgust.put("zh","先生，您怎麼了？");
+        male_adult_fear.put("zh", "先生, 您怎麼了？");
+        male_adult_happiness.put("zh", "先生, 您怎麼了？");
+        male_adult_neutral.put("zh", "先生, 您怎麼了？");
+        male_adult_sadness.put("zh", "先生, 您怎麼了？");
+        male_adult_surprise.put("zh", "先生, 您怎麼了？");
 
-        photo3.put("en","You can also share it.");
-        photo3.put("zh","你可以跟朋友分享");
+        //Senior Adults
+        female_senior_anger.put("zh","阿姨，您為什麼看起來很生氣的樣子?");
+        female_senior_disgust.put("zh","阿姨，您怎麼了？");
+        female_senior_fear.put("zh","阿姨，您怎麼了？");
+        female_senior_happiness.put("zh","阿姨，您看起來氣色很好喔！");
+        female_senior_neutral.put("zh","阿姨，您怎麼了？");
+        female_senior_sadness.put("zh","阿姨，您怎麼了？");
+        female_senior_surprise.put("zh", "阿姨，你看起來很驚訝!");
 
-        photo4.put("en","When you are done, press done!");
-        photo4.put("zh","當你看完了，請按『完成!』");
-
-        share1.put("en","How would you like to share this content?");
-        share1.put("zh","你想怎麼跟朋友分享這個檔案");
-
-        share2.put("en","Your file is uploading, please wait a moment");
-        share2.put("zh","正在上傳....請稍等一下");
-
-        share3.put("en","Use this QR code to get your file!");
-        share3.put("zh","掃描二維碼來得到您的檔案");
-
+        male_senior_anger.put("zh","先生，您為什麼看起來很生氣的樣子?");
+        male_senior_disgust.put("zh","先生, 您怎麼了？");
+        male_senior_fear.put("zh", "先生, 您怎麼了？");
+        male_senior_happiness.put("zh", "先生, 您怎麼了？");
+        male_senior_neutral.put("zh", "先生, 您怎麼了？");
+        male_senior_sadness.put("zh", "先生, 您怎麼了？");
+        male_senior_surprise.put("zh", "先生, 您怎麼了？");
     }
 
 }

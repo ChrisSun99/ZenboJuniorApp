@@ -1,1 +1,1 @@
-include ':app', ':ZenboJuniorSDK', ':RobotActivityLibrary'
+include ':app', ':RobotActivityLibrary'

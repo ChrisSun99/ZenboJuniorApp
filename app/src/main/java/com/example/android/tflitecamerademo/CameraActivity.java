@@ -18,8 +18,9 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
   public static RobotAPI mRobotAPI;
   public static Dialogs dialogs;
 
-
-
+  public CameraActivity() {
+    super(robotCallback, robotListenCallback);
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +35,7 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
 
     mRobotAPI = new RobotAPI(this, robotCallback);
     dialogs = new Dialogs();
+    sayWithExpression("Hello World.");
   }
 
   public static void sayWithExpression(String speech){

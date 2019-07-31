@@ -4,7 +4,7 @@
             "outputFile": "/Users/apple/Desktop/tflite/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/transforms-2/files-2.1/0f6a11c5a599d9aa5522f2989ef1c92a/res/values-v16/values-v16.xml",
+                    "source": "/Users/apple/.gradle/caches/transforms-2/files-2.1/10ca8ebd6c60987f12c7f22477f97905/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/apple/.gradle/caches/transforms-2/files-2.1/c9f25d6816b56854d997bb58b720dd8e/res/values-v16/values-v16.xml",
+                    "source": "/Users/apple/.gradle/caches/transforms-2/files-2.1/5b54b4058252409d30538a73bd981960/res/values-v16/values-v16.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

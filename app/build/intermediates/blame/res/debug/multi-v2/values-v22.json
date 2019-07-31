@@ -4,7 +4,7 @@
             "outputFile": "/Users/apple/Desktop/tflite/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "/Users/apple/.gradle/caches/transforms-2/files-2.1/c9f25d6816b56854d997bb58b720dd8e/res/values-v22/values-v22.xml",
+                    "source": "/Users/apple/.gradle/caches/transforms-2/files-2.1/5b54b4058252409d30538a73bd981960/res/values-v22/values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

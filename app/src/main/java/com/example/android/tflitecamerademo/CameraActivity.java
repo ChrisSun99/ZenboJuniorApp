@@ -9,7 +9,8 @@ import com.asus.robotframework.API.RobotCallback;
 import com.asus.robotframework.API.RobotErrorCode;
 import com.asus.robotframework.API.RobotFace;
 import com.robot.asus.robotactivity.RobotActivity;
-
+import com.asus.robotframework.API.SpeakConfig;
+import com.asus.robotframework.API.DialogSystem;
 import org.json.JSONObject;
 
 /** Main {@code Activity} class for the Camera app. */
@@ -17,6 +18,7 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
   public final static String TAG = CameraActivity.class.getSimpleName();
   public static RobotAPI mRobotAPI;
   public static Dialogs dialogs;
+  public static SpeakConfig speakConfig = new SpeakConfig();
 
   public CameraActivity() {
     super(robotCallback, robotListenCallback);
@@ -32,19 +34,40 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
               .replace(R.id.container, Camera2BasicFragment.newInstance())
               .commit();
     }
-
     mRobotAPI = new RobotAPI(this, robotCallback);
     dialogs = new Dialogs();
-    sayWithExpression("Hello World.");
+
+    //Initial speech config
+    speakConfig.timeout(30);
+    speakConfig.volume(60);
+    speakConfig.languageId(DialogSystem.LANGUAGE_ID_ZH_TW);
+    speakConfig.alwaysListenState(SpeakConfig.MODE_FOREVER);
   }
 
-  public static void sayWithExpression(String speech){
+  public static void sayWithExpression(){
+
+    String speech = dialogs.greetings.get("female_kid_anger");
     Log.d(TAG, "say /w ex " + speech);
 
     //In debugging mode we ignore this for efficiency
     //mRobotAPI.robot.setExpression(generate_expression(speech));
-    mRobotAPI.robot.setExpression(RobotFace.DEFAULT);
-    mRobotAPI.robot.speak(speech);
+    mRobotAPI.robot.setExpression(RobotFace.HAPPY);
+    mRobotAPI.robot.speak(speech, speakConfig);
+  }
+
+  @Override
+  protected void onResume() {
+    super.onResume();
+    mRobotAPI.robot.registerListenCallback(robotListenCallback);
+    sayWithExpression();
+  }
+
+  @Override
+  protected void onPause() {
+    mRobotAPI.robot.unregisterListenCallback();
+    //mRobotAPI.release();
+    super.onPause();
+    mRobotAPI.robot.stopSpeakAndListen();
   }
 
 

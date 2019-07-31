@@ -79,6 +79,12 @@ public class Camera2BasicFragment extends Fragment
   /** Max preview height that is guaranteed by Camera2 API */
   private static final int MAX_PREVIEW_HEIGHT = 1080;
 
+  /** Clasification results */
+
+  public String GENDER;
+  public String EMOTION;
+
+
   /**
    * {@link TextureView.SurfaceTextureListener} handles several lifecycle events on a {@link
    * TextureView}.
@@ -669,7 +675,9 @@ public class Camera2BasicFragment extends Fragment
         textureView.getBitmap(GenderClassifier.DIM_IMG_SIZE_X, GenderClassifier.DIM_IMG_SIZE_Y);
     Bitmap bitmap_e =
             textureView.getBitmap(EmotionClassifier.DIM_IMG_SIZE_X, EmotionClassifier.DIM_IMG_SIZE_Y);
-    String textToShow = gclassifier.classifyFrame(bitmap_g) + eclassifier.classifyFrame(bitmap_e);
+    GENDER = gclassifier.classifyFrame(bitmap_g);
+    EMOTION = eclassifier.classifyFrame(bitmap_e);
+    String textToShow =  GENDER + EMOTION;
     bitmap_g.recycle();
     bitmap_e.recycle();
     showToast(textToShow);

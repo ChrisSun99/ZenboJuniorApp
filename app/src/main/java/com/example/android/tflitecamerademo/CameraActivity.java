@@ -44,9 +44,14 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
     speakConfig.alwaysListenState(SpeakConfig.MODE_FOREVER);
   }
 
-  public static void sayWithExpression(){
 
-    String speech = dialogs.greetings.get("female_kid_anger");
+
+  public static void sayWithExpression(){
+    String speech = "Hello World";
+//    if (Camera2BasicFragment.newInstance().GENDER.equals("female")) {
+//      speech = dialogs.greetings.get("female_senior_happiness");
+//    }
+
     Log.d(TAG, "say /w ex " + speech);
 
     //In debugging mode we ignore this for efficiency

@@ -679,7 +679,7 @@ public class Camera2BasicFragment extends Fragment
 
   /** Classifies a frame from the preview stream. */
   public String classifyFrame() {
-    if (gclassifier == null || eclassifier == null || getActivity() == null || cameraDevice == null) {
+    if ( aclassifier == null || gclassifier == null || eclassifier == null || getActivity() == null || cameraDevice == null) {
       showToast("Uninitialized Classifier or invalid context.");
       return "hello";
     }

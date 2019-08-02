@@ -70,11 +70,11 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
     super.onResume();
     mRobotAPI.robot.registerListenCallback(robotListenCallback);
     System.out.println(fragment.GENDER);
-    if (fragment.GENDER.equals("female")) {
-      //String speech = dialogs.greetings.get("female_senior_happiness");
-      mRobotAPI.robot.speak("Hello World!", speakConfig);
-      Log.d(TAG, "say /w ex " + "Helllllllllloooooooo");
-      }
+//    if (fragment.GENDER.equals("female")) {
+//      //String speech = dialogs.greetings.get("female_senior_happiness");
+//      mRobotAPI.robot.speak("Hello World!", speakConfig);
+//      Log.d(TAG, "say /w ex " + "Helllllllllloooooooo");
+//      }
     //sayWithExpression();
   }
 

@@ -50,6 +50,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
 
@@ -669,19 +670,17 @@ public class Camera2BasicFragment extends Fragment
     return eclassifier.classifyFrame(bitmap);
   }
 
-//  public Bitmap bitmap_g;
-//  public Bitmap bitmap_e;
   /** Clasification results */
 
-  public String GENDER;
-  public String EMOTION;
-  public String AGE;
+  public List<String> AGE = new ArrayList<>();
+  public List<String> EMOTION = new ArrayList<>();
+  public List<String> GENDER = new ArrayList<>();
 
   /** Classifies a frame from the preview stream. */
-  public String classifyFrame() {
-    if ( aclassifier == null || gclassifier == null || eclassifier == null || getActivity() == null || cameraDevice == null) {
+  public void classifyFrame() {
+    if (aclassifier == null || gclassifier == null || eclassifier == null || getActivity() == null || cameraDevice == null) {
       showToast("Uninitialized Classifier or invalid context.");
-      return "hello";
+      return;
     }
     Bitmap bitmap_g =
         textureView.getBitmap(GenderClassifier.DIM_IMG_SIZE_X, GenderClassifier.DIM_IMG_SIZE_Y);
@@ -689,17 +688,14 @@ public class Camera2BasicFragment extends Fragment
             textureView.getBitmap(EmotionClassifier.DIM_IMG_SIZE_X, EmotionClassifier.DIM_IMG_SIZE_Y);
     Bitmap bitmap_a =
             textureView.getBitmap(AgeClassifier.DIM_IMG_SIZE_X, AgeClassifier.DIM_IMG_SIZE_Y);
-//    GENDER = classifyGender(bitmap_g);
-//    EMOTION = classifyEmotion(bitmap_e);
-    GENDER = gclassifier.classifyFrame(bitmap_g);
-    EMOTION = eclassifier.classifyFrame(bitmap_e);
-    AGE = aclassifier.classifyFrame(bitmap_a);
-    String textToShow =  GENDER + EMOTION + AGE;
+    String textToShow = gclassifier.classifyFrame(bitmap_g) + eclassifier.classifyFrame(bitmap_e) + aclassifier.classifyFrame(bitmap_a);
     bitmap_g.recycle();
     bitmap_e.recycle();
     bitmap_a.recycle();
     showToast(textToShow);
-    return GENDER;
+    GENDER.add(gclassifier.GenderResult.keySet().iterator().next());
+    EMOTION.add(eclassifier.EmotionResult.keySet().iterator().next());
+    AGE.add(aclassifier.AgeResult.keySet().iterator().next());
   }
 
   /** Compares two {@code Size}s based on their areas. */

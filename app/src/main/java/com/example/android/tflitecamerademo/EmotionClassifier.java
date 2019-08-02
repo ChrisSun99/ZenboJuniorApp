@@ -16,6 +16,7 @@ import java.nio.channels.FileChannel;
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
@@ -185,6 +186,11 @@ public class EmotionClassifier {
         Log.d(TAG, "Timecost to put values into ByteBuffer: " + Long.toString(endTime - startTime));
     }
 
+
+    public Map<String, Float> EmotionResult = new HashMap<>();
+    public float maxValueInMap = Float.NEGATIVE_INFINITY;
+    public String maxKey;
+
     /** Prints top-K labels, to be shown in UI as the results. */
     private String printTopKLabels() {
         for (int i = 0; i < labelList.size(); ++i) {
@@ -198,8 +204,13 @@ public class EmotionClassifier {
         final int size = sortedLabels.size();
         for (int i = 0; i < size; ++i) {
             Map.Entry<String, Float> label = sortedLabels.poll();
+            if (label.getValue() > maxValueInMap) {
+                maxValueInMap = label.getValue();
+                maxKey = label.getKey();
+            }
             textToShow = String.format("\n%s: %4.2f",label.getKey(),label.getValue()) + textToShow;
         }
+        EmotionResult.put(maxKey, maxValueInMap);
         return textToShow;
     }
 }

@@ -1,18 +1,18 @@
 package com.example.android.tflitecamerademo;
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 
+import com.asus.robotframework.API.DialogSystem;
 import com.asus.robotframework.API.RobotAPI;
 import com.asus.robotframework.API.RobotCallback;
 import com.asus.robotframework.API.RobotErrorCode;
 import com.asus.robotframework.API.RobotFace;
-import com.robot.asus.robotactivity.RobotActivity;
 import com.asus.robotframework.API.SpeakConfig;
-import com.asus.robotframework.API.DialogSystem;
+import com.robot.asus.robotactivity.RobotActivity;
+
 import org.json.JSONObject;
-import android.app.Fragment;
 
 import java.util.Map;
 
@@ -40,8 +40,8 @@ public class CameraActivity extends RobotActivity implements Camera2BasicFragmen
     public void onArticleSelected(Map<String, String> category) {
       if (counter == 0) {
        String speech = dialogs.greetings.get(String.format(("%1$s_%2$s_%3$s"), category.get("Gender"), category.get("Age"), category.get("Emotion")));
-       mRobotAPI.robot.speak(speech, speakConfig);
-       Log.d(TAG, "say /w ex " + "Helllllllllloooooooo");
+       //mRobotAPI.robot.speak(speech, speakConfig);
+       Log.d(TAG, "say /w ex " + String.format(("%1$s_%2$s_%3$s"), category.get("Gender"), category.get("Age"), category.get("Emotion")));
        counter ++;
       }
     }
@@ -72,7 +72,7 @@ public class CameraActivity extends RobotActivity implements Camera2BasicFragmen
   protected void onResume() {
     super.onResume();
     mRobotAPI.robot.registerListenCallback(robotListenCallback);
-    mRobotAPI.robot.setExpression(RobotFace.HAPPY);
+    //mRobotAPI.robot.setExpression(RobotFace.HAPPY);
   }
 
   @Override
@@ -128,7 +128,4 @@ public class CameraActivity extends RobotActivity implements Camera2BasicFragmen
 
     }
   };
-
-
-
 }

@@ -9,24 +9,41 @@ public class Dialogs {
 
 
     public Dialogs(){
-        // Kids
-        greetings.put("female_kid_anger","小姑娘，你為什麼看起來很生氣的樣子?");
-        greetings.put("female_kid_disgust","小姑娘，你怎麼了?");
-        greetings.put("female_kid_fear","小姑娘，你怎麼了?");
-        greetings.put("female_kid_happiness","小姑娘, 你看起來很開心喔！");
-        greetings.put("female_kid_neutral","小姑娘, 今天心情怎麼樣？");
-        greetings.put("female_kid_sadness","小姑娘, 您怎麼了？");
-        greetings.put("female_kid_surprise", "小姑娘，你看起來很驚訝!");
+        // Kids 0-12
+        greetings.put("female_kid_anger","孩子，你為什麼看起來很生氣的樣子?");
+        greetings.put("female_kid_disgust","孩子，你怎麼了?");
+        greetings.put("female_kid_fear","孩子，你怎麼了?");
+        greetings.put("female_kid_happiness","孩子, 你看起來很開心喔！");
+        greetings.put("female_kid_neutral","孩子, 今天心情怎麼樣？");
+        greetings.put("female_kid_sadness","孩子, 您怎麼了？");
+        greetings.put("female_kid_surprise", "孩子，你看起來很驚訝!");
 
-        greetings.put("male_kid_anger","小伙子，你為什麼看起來很生氣的樣子?");
-        greetings.put("male_kid_disgust","小伙子，你怎麼了？");
-        greetings.put(" male_kid_fear", "小伙子, 您怎麼了？");
-        greetings.put("male_kid_happiness", "小伙子, 你怎麼了？");
-        greetings.put("male_kid_neutral", "小伙子, 你怎麼了？");
-        greetings.put("male_kid_sadness", "小伙子, 你怎麼了？");
-        greetings.put("male_kid_surprise", "小伙子, 你怎麼了？");
+        greetings.put("male_kid_anger","孩子，你為什麼看起來很生氣的樣子?");
+        greetings.put("male_kid_disgust","孩子，你怎麼了？");
+        greetings.put(" male_kid_fear", "孩子, 您怎麼了？");
+        greetings.put("male_kid_happiness", "孩子, 你怎麼了？");
+        greetings.put("male_kid_neutral", "孩子, 你怎麼了？");
+        greetings.put("male_kid_sadness", "孩子, 你怎麼了？");
+        greetings.put("male_kid_surprise", "孩子, 你怎麼了？");
 
-        // Adults
+        // Young Adults 13-18
+        greetings.put("female_young_anger","小姑娘，你為什麼看起來很生氣的樣子?");
+        greetings.put("female_young_disgust","小姑娘，你怎麼了?");
+        greetings.put("female_young_fear","小姑娘，你怎麼了?");
+        greetings.put("female_young_happiness","小姑娘, 你看起來很開心喔！");
+        greetings.put("female_young_neutral","小姑娘, 今天心情怎麼樣？");
+        greetings.put("female_young_sadness","小姑娘, 您怎麼了？");
+        greetings.put("female_young_surprise", "小姑娘，你看起來很驚訝!");
+
+        greetings.put("male_young_anger","小伙子，你為什麼看起來很生氣的樣子?");
+        greetings.put("male_young_disgust","小伙子，你怎麼了？");
+        greetings.put(" male_young_fear", "小伙子, 您怎麼了？");
+        greetings.put("male_young_happiness", "小伙子, 你怎麼了？");
+        greetings.put("male_young_neutral", "小伙子, 你怎麼了？");
+        greetings.put("male_young_sadness", "小伙子, 你怎麼了？");
+        greetings.put("male_young_surprise", "小伙子, 你怎麼了？");
+
+        // Adults 19-59
         greetings.put("female_adult_anger","女士，你為什麼看起來很生氣的樣子?");
         greetings.put("female_adult_disgust","女士，你怎麼了?");
         greetings.put("female_adult_fear","女士，你為什麼看起來很緊張？");

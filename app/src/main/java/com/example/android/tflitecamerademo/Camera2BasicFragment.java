@@ -72,18 +72,13 @@ public class Camera2BasicFragment extends Fragment
   private TextView textView;
   private GenderClassifier gclassifier;
   private EmotionClassifier eclassifier;
+  private AgeClassifier aclassifier;
 
   /** Max preview width that is guaranteed by Camera2 API */
   private static final int MAX_PREVIEW_WIDTH = 1920;
 
   /** Max preview height that is guaranteed by Camera2 API */
   private static final int MAX_PREVIEW_HEIGHT = 1080;
-
-  /** Clasification results */
-
-  public String GENDER;
-  public String EMOTION;
-
 
   /**
    * {@link TextureView.SurfaceTextureListener} handles several lifecycle events on a {@link
@@ -296,6 +291,7 @@ public class Camera2BasicFragment extends Fragment
     try {
       gclassifier = new GenderClassifier(getActivity());
       eclassifier = new EmotionClassifier(getActivity());
+      aclassifier = new AgeClassifier(getActivity());
     } catch (IOException e) {
       Log.e(TAG, "Failed to initialize a classifier.");
     }
@@ -329,6 +325,7 @@ public class Camera2BasicFragment extends Fragment
   public void onDestroy() {
     gclassifier.close();
     eclassifier.close();
+    aclassifier.close();
     super.onDestroy();
   }
 
@@ -664,23 +661,45 @@ public class Camera2BasicFragment extends Fragment
     textureView.setTransform(matrix);
   }
 
+  public String classifyGender(Bitmap bitmap) {
+    return gclassifier.classifyFrame(bitmap);
+  }
+
+  public String classifyEmotion(Bitmap bitmap) {
+    return eclassifier.classifyFrame(bitmap);
+  }
+
+//  public Bitmap bitmap_g;
+//  public Bitmap bitmap_e;
+  /** Clasification results */
+
+  public String GENDER;
+  public String EMOTION;
+  public String AGE;
+
   /** Classifies a frame from the preview stream. */
-  private void classifyFrame() {
+  public String classifyFrame() {
     if (gclassifier == null || eclassifier == null || getActivity() == null || cameraDevice == null) {
       showToast("Uninitialized Classifier or invalid context.");
-      return;
+      return "hello";
     }
-
     Bitmap bitmap_g =
         textureView.getBitmap(GenderClassifier.DIM_IMG_SIZE_X, GenderClassifier.DIM_IMG_SIZE_Y);
     Bitmap bitmap_e =
             textureView.getBitmap(EmotionClassifier.DIM_IMG_SIZE_X, EmotionClassifier.DIM_IMG_SIZE_Y);
+    Bitmap bitmap_a =
+            textureView.getBitmap(AgeClassifier.DIM_IMG_SIZE_X, AgeClassifier.DIM_IMG_SIZE_Y);
+//    GENDER = classifyGender(bitmap_g);
+//    EMOTION = classifyEmotion(bitmap_e);
     GENDER = gclassifier.classifyFrame(bitmap_g);
     EMOTION = eclassifier.classifyFrame(bitmap_e);
-    String textToShow =  GENDER + EMOTION;
+    AGE = aclassifier.classifyFrame(bitmap_a);
+    String textToShow =  GENDER + EMOTION + AGE;
     bitmap_g.recycle();
     bitmap_e.recycle();
+    bitmap_a.recycle();
     showToast(textToShow);
+    return GENDER;
   }
 
   /** Compares two {@code Size}s based on their areas. */

@@ -19,6 +19,7 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
   public static RobotAPI mRobotAPI;
   public static Dialogs dialogs;
   public static SpeakConfig speakConfig = new SpeakConfig();
+  public Camera2BasicFragment fragment = Camera2BasicFragment.newInstance();
 
   public CameraActivity() {
     super(robotCallback, robotListenCallback);
@@ -31,9 +32,10 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
     if (null == savedInstanceState) {
       getFragmentManager()
               .beginTransaction()
-              .replace(R.id.container, Camera2BasicFragment.newInstance())
+              .replace(R.id.container, fragment)
               .commit();
     }
+
     mRobotAPI = new RobotAPI(this, robotCallback);
     dialogs = new Dialogs();
 
@@ -44,27 +46,36 @@ public class CameraActivity extends RobotActivity implements ActivityCompat.OnRe
     speakConfig.alwaysListenState(SpeakConfig.MODE_FOREVER);
   }
 
+  //public String gender = Camera2BasicFragment.newInstance().classifyGender(Camera2BasicFragment.newInstance().bitmap_g);
+  //public String emotion = Camera2BasicFragment.newInstance().EMOTION;
+
+  public void sayWithExpression(){
+
+    if (fragment.classifyFrame().equals("female")) {
+      //String speech = dialogs.greetings.get("female_senior_happiness");
+      mRobotAPI.robot.speak("Hello World!", speakConfig);
+      Log.d(TAG, "say /w ex " + "Helllllllllloooooooo");
+    }
 
 
-  public static void sayWithExpression(){
-    String speech = "Hello World";
-//    if (Camera2BasicFragment.newInstance().GENDER.equals("female")) {
-//      speech = dialogs.greetings.get("female_senior_happiness");
-//    }
-
-    Log.d(TAG, "say /w ex " + speech);
 
     //In debugging mode we ignore this for efficiency
     //mRobotAPI.robot.setExpression(generate_expression(speech));
-    mRobotAPI.robot.setExpression(RobotFace.HAPPY);
-    mRobotAPI.robot.speak(speech, speakConfig);
+    //mRobotAPI.robot.setExpression(RobotFace.HAPPY);
+
   }
 
   @Override
   protected void onResume() {
     super.onResume();
     mRobotAPI.robot.registerListenCallback(robotListenCallback);
-    sayWithExpression();
+    System.out.println(fragment.GENDER);
+    if (fragment.GENDER.equals("female")) {
+      //String speech = dialogs.greetings.get("female_senior_happiness");
+      mRobotAPI.robot.speak("Hello World!", speakConfig);
+      Log.d(TAG, "say /w ex " + "Helllllllllloooooooo");
+      }
+    //sayWithExpression();
   }
 
   @Override

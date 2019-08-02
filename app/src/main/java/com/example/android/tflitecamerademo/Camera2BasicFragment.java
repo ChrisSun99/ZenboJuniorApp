@@ -49,7 +49,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
@@ -676,6 +678,22 @@ public class Camera2BasicFragment extends Fragment
   public List<String> EMOTION = new ArrayList<>();
   public List<String> GENDER = new ArrayList<>();
 
+
+
+
+
+  /** Communication between CameraActivity and Camera2BasicFragment **/
+  OnHeadlineSelectedListener callback;
+
+  public void setOnHeadlineSelectedListener(OnHeadlineSelectedListener callback) {
+    this.callback = callback;
+  }
+
+  public interface OnHeadlineSelectedListener {
+    public void onArticleSelected(Map<String, String> category);
+  }
+
+
   /** Classifies a frame from the preview stream. */
   public void classifyFrame() {
     if (aclassifier == null || gclassifier == null || eclassifier == null || getActivity() == null || cameraDevice == null) {
@@ -696,6 +714,17 @@ public class Camera2BasicFragment extends Fragment
     GENDER.add(gclassifier.GenderResult.keySet().iterator().next());
     EMOTION.add(eclassifier.EmotionResult.keySet().iterator().next());
     AGE.add(aclassifier.AgeResult.keySet().iterator().next());
+    Map<String, String> cat = new HashMap<>();
+    String age;
+    if (AGE.get(0).equals("0-12")) age = "kid";
+    else if (AGE.get(0).equals("13-18")) age = "young";
+    else if (AGE.get(0).equals("19-59")) age = "adult";
+    else age = "senior";
+    cat.put("Gender", GENDER.get(0));
+    cat.put("Age", age);
+    cat.put("Emotion", EMOTION.get(0));
+    // Callback to CameraActivity
+    callback.onArticleSelected(cat);
   }
 
   /** Compares two {@code Size}s based on their areas. */

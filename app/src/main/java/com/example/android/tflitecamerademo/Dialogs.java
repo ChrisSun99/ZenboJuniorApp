@@ -60,7 +60,7 @@ public class Dialogs {
         greetings.put("male_adult_sadness", "先生, 您怎麼了？");
         greetings.put("male_adult_surprise", "先生, 您怎麼了？");
 
-        //Senior Adults
+        //Senior Adults 60+
         greetings.put("female_senior_anger","阿姨，您為什麼看起來很生氣的樣子?");
         greetings.put("female_senior_disgust","阿姨，您怎麼了？");
         greetings.put("female_senior_fear","阿姨，您怎麼了？");

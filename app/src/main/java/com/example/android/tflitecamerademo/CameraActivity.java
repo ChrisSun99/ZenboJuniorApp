@@ -38,9 +38,10 @@ public class CameraActivity extends RobotActivity implements Camera2BasicFragmen
 
     @Override
     public void onArticleSelected(Map<String, String> category) {
-      if (counter == 0) {
+      if (counter == 10) {
        String speech = dialogs.greetings.get(String.format(("%1$s_%2$s_%3$s"), category.get("Gender"), category.get("Age"), category.get("Emotion")));
-       //mRobotAPI.robot.speak(speech, speakConfig);
+
+       mRobotAPI.robot.speak(speech, speakConfig);
        Log.d(TAG, "say /w ex " + String.format(("%1$s_%2$s_%3$s"), category.get("Gender"), category.get("Age"), category.get("Emotion")));
        counter ++;
       }
@@ -78,7 +79,7 @@ public class CameraActivity extends RobotActivity implements Camera2BasicFragmen
   @Override
   protected void onPause() {
     mRobotAPI.robot.unregisterListenCallback();
-    //mRobotAPI.release();
+    mRobotAPI.release();
     super.onPause();
     mRobotAPI.robot.stopSpeakAndListen();
   }

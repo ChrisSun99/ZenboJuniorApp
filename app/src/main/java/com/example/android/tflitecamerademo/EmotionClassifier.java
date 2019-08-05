@@ -27,7 +27,7 @@ public class EmotionClassifier {
     private static final String TAG = "TfLiteCameraDemo";
 
     /** Name of the model file stored in Assets. */
-    private static final String MODEL_PATH = "eg.lite";
+    private static final String MODEL_PATH = "emotion.lite";
 
     /** Name of the label file stored in Assets. */
     private static final String LABEL_PATH = "el.txt";
@@ -107,7 +107,7 @@ public class EmotionClassifier {
 
         // print the results
         String textToShow = printTopKLabels();
-        textToShow = Long.toString(endTime - startTime) + "ms" + textToShow;
+        textToShow = Long.toString(endTime - startTime) + "ms" + textToShow + "\n";
         return textToShow;
     }
 

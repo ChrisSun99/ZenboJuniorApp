@@ -40,7 +40,7 @@ public class Dialogs {
         greetings.put(" male_young_fear", "小伙子, 您怎麼了？");
         greetings.put("male_young_happiness", "小伙子, 你怎麼了？");
         greetings.put("male_young_neutral", "小伙子, 你今天心情怎麼樣？");
-        greetings.put("male_young_sadness", "小伙子, 你怎麼了？");
+        greetings.put("male_young_sadness", "小伙子, 你怎麼不开心？");
         greetings.put("male_young_surprise", "小伙子, 你怎麼了？");
 
         // Adults 19-59

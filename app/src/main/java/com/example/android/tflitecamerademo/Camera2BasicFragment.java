@@ -54,6 +54,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.TimeUnit;
+import java.util.Map.Entry;
 
 /**
  * Basic fragments for the Camera.
@@ -717,9 +718,6 @@ public class Camera2BasicFragment extends Fragment
     /**
      * Clasification results
      */
-    public List<String> AGE = new ArrayList<>();
-    public List<String> EMOTION = new ArrayList<>();
-    public List<String> GENDER = new ArrayList<>();
 
     /**
      * Communication between CameraActivity and Camera2BasicFragment
@@ -738,6 +736,7 @@ public class Camera2BasicFragment extends Fragment
     /**
      * Classifies a frame from the preview stream.
      */
+
     public void classifyFrame() {
         if (aclassifier == null || gclassifier == null || eclassifier == null || getActivity() == null || cameraDevice == null) {
             showToast("Uninitialized Classifier or invalid context.");
@@ -754,18 +753,54 @@ public class Camera2BasicFragment extends Fragment
         bitmap_e.recycle();
         bitmap_a.recycle();
         showToast(textToShow);
-        GENDER.add(gclassifier.GenderResult.keySet().iterator().next());
-        EMOTION.add(eclassifier.EmotionResult.keySet().iterator().next());
-        AGE.add(aclassifier.AgeResult.keySet().iterator().next());
+
+        Map.Entry<String, Float> maxEntryGender = null; // Gender
+        Map.Entry<String, Float> maxEntryAge = null; // Age
+        Map.Entry<String, Float> maxEntryEmotion = null; // Emotion
+
+        /** The following part might be redundant. Need improvement. **/
+
+        for (Map.Entry<String, Float> entry : gclassifier.GenderResult.entrySet())
+        {
+            if (maxEntryGender == null || entry.getValue().compareTo(maxEntryGender.getValue()) > 0)
+            {
+                maxEntryGender = entry;
+            }
+        }
+        for (Map.Entry<String, Float> entry : aclassifier.AgeResult.entrySet())
+        {
+            if (maxEntryAge == null || entry.getValue().compareTo(maxEntryAge.getValue()) > 0)
+            {
+                maxEntryAge = entry;
+            }
+        }
+        for (Map.Entry<String, Float> entry : eclassifier.EmotionResult.entrySet())
+        {
+            if (maxEntryEmotion == null || entry.getValue().compareTo(maxEntryEmotion.getValue()) > 0)
+            {
+                maxEntryEmotion = entry;
+            }
+        }
         Map<String, String> cat = new HashMap<>();
         String age;
-        if (AGE.get(0).equals("0-12")) age = "kid";
-        else if (AGE.get(0).equals("13-18")) age = "young";
-        else if (AGE.get(0).equals("19-59")) age = "adult";
-        else age = "senior";
-        cat.put("Gender", GENDER.get(0));
+        switch (maxEntryAge.getKey()) {
+            case "0-12":
+                age = "kid";
+                break;
+            case "13-18":
+                age = "young";
+                break;
+            case "19-59":
+                age = "adult";
+                break;
+            default:
+                age = "senior";
+                break;
+        }
+        cat.put("Gender", maxEntryGender.getKey());
         cat.put("Age", age);
-        cat.put("Emotion", EMOTION.get(0));
+        cat.put("Emotion",maxEntryEmotion.getKey());
+
         // Callback to CameraActivity
         callback.onArticleSelected(cat);
     }

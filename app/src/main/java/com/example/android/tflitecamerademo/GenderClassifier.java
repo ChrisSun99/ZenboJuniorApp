@@ -30,7 +30,7 @@ public class GenderClassifier {
   private static final String TAG = "TfLiteCameraDemo";
 
   /** Name of the model file stored in Assets. */
-  private static final String MODEL_PATH = "gg.lite";
+  private static final String MODEL_PATH = "gender.lite";
 
   /** Name of the label file stored in Assets. */
   private static final String LABEL_PATH = "gl.txt";
@@ -110,7 +110,7 @@ public class GenderClassifier {
 
     // print the results
     String textToShow = printTopKLabels();
-    textToShow = Long.toString(endTime - startTime) + "ms" + textToShow;
+    textToShow = Long.toString(endTime - startTime) + "ms" + textToShow + "\n";
     return textToShow;
   }
 

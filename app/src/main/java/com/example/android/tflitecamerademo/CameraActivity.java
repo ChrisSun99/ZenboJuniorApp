@@ -66,7 +66,7 @@ public class CameraActivity extends RobotActivity implements Camera2BasicFragmen
     speakConfig.timeout(30);
     speakConfig.volume(60);
     speakConfig.languageId(DialogSystem.LANGUAGE_ID_ZH_TW);
-    speakConfig.alwaysListenState(SpeakConfig.MODE_FOREVER);
+    speakConfig.alwaysListenState(SpeakConfig.MODE_TIMEOUT);
   }
 
   @Override

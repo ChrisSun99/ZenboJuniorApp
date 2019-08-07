@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.PriorityQueue;
-import java.util.Collections;
+
 import org.tensorflow.lite.Interpreter;
 
 /** Classifies images with Tensorflow Lite. */
@@ -30,7 +30,7 @@ public class GenderClassifier {
   private static final String TAG = "TfLiteCameraDemo";
 
   /** Name of the model file stored in Assets. */
-  private static final String MODEL_PATH = "gender.lite";
+  private static final String MODEL_PATH = "gender.tflite";
 
   /** Name of the label file stored in Assets. */
   private static final String LABEL_PATH = "gl.txt";

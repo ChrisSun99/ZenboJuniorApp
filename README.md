@@ -15,7 +15,7 @@ at the end.
   - The model uses `Mobile_Net_v2_224_1.4` version of the MobileNet
 
 - Age Model 
-  - I followed the instruction of [this paper] (https://www.vision.ee.ethz.ch/en/publications/papers/proceedings/eth_biwi_01229.pdf)
+  - I followed the instruction of [this paper](https://www.vision.ee.ethz.ch/en/publications/papers/proceedings/eth_biwi_01229.pdf)
   - Built on [UTKFace dataset](https://susanqq.github.io/UTKFace/) with 20k+ face images in the wild (only single face in one image)
   - The model uses `Mobile_Net_v2_224_1.00` version of the MobileNet 
 

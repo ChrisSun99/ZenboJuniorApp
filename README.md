@@ -10,7 +10,8 @@ at the end.
   - The model uses `Mobile_Net_v1_224_0.5` version of the MobileNet
 
 - Emotion Model 
-  - Built on [AffectNet](http://mohammadmahoor.com/affectnet/) model with more than 1M facial images in seven discrete facial expressions; it is the largest dataset of facial expressions
+  - Built on [fer2013](https://www.kaggle.com/c/challenges-in-representation-learning
+-facial-expression-recognition-challenge/data) dataset of Kaggle with more than 28,709 facial images in seven discrete facial expressions(happiness, anger, surprise, disgust,  sadness, fear, and neutral).
   - The model uses `Mobile_Net_v2_224_1.4` version of the MobileNet
 
 - Age Model 
@@ -19,10 +20,10 @@ at the end.
   - The model uses `Mobile_Net_v2_224_1.00` version of the MobileNet 
 
 
-You may find the presentation for this project at this link. 
-You may find the demo for this project at this link. 
+You may find the presentation for this project at this [link](). 
+You may find the demo for this project at this [link](). 
 
 TODOs:
 - [ ] Draw reactangles during face detection 
-- [x] Optimize age model 
+- [x] Optimize the age model 
 - [ ] New greeting after detecting different faces 

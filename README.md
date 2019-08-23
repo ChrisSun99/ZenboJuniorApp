@@ -20,8 +20,8 @@ at the end.
   - The model uses `Mobile_Net_v2_224_1.00` version of the MobileNet 
 
 
-You may find the presentation for this project at this [link](). 
-You may find the demo for this project at this [link](). 
+You may find the presentation for this project at this [link](https://docs.google.com/presentation/d/1DGKUtkw4W50_oqFQ33PoBuXJFHhzzMC0Cxyu9bmmEa4/edit?usp=sharing). 
+You may find the demo for this project at this [link](https://drive.google.com/file/d/1CdP2M-XZykRogQ39WmcecHTq73299xCE/view?usp=sharing). 
 
 TODOs:
 - [ ] Draw reactangles during face detection 

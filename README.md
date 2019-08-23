@@ -10,8 +10,7 @@ at the end.
   - The model uses `Mobile_Net_v1_224_0.5` version of the MobileNet
 
 - Emotion Model 
-  - Built on [fer2013](https://www.kaggle.com/c/challenges-in-representation-learning
--facial-expression-recognition-challenge/data) dataset of Kaggle with more than 28,709 facial images in seven discrete facial expressions(happiness, anger, surprise, disgust,  sadness, fear, and neutral).
+  - Built on [fer2013](https://www.kaggle.com/c/challenges-in-representation-learning-facial-expression-recognition-challenge/data) dataset of Kaggle with more than 28,709 facial images in seven discrete facial expressions(happiness, anger, surprise, disgust,  sadness, fear, and neutral).
   - The model uses `Mobile_Net_v2_224_1.4` version of the MobileNet
 
 - Age Model 
